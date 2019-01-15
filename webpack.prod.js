@@ -2,7 +2,7 @@ const	webpack			= require( 'webpack' ),
 		path			= require( 'path' ),
 		fs				= require( 'fs' ),
 		{ execSync }	= require( 'child_process' ),
-		websiteName		= 'example.de',
+		websiteName		= 'bonihomines.de',
 		websitePath		= `/var/www/html/${ websiteName }/`,
 		publicPath		= `https://${ websiteName }/`,
 		buildTime		= Date.now();
@@ -17,7 +17,7 @@ fs.readdirSync( websitePath ).forEach( file  => {
 console.log( '\nDone.\n' );
 
 console.log( '\nCompiling BarFoos 2.0 Framework...\n' );
-execSync( 'buildbf --target /home/zer0cool/projects/example_website --production' );
+execSync( 'buildbf --target /home/zer0cool/projects/boni_homines_crowd_funding_website --production' );
 console.log( 'Done.\n' );
 
 module.exports = {
@@ -80,7 +80,7 @@ module.exports = {
 					{
 						loader:		'url-loader',
 						options:	{
-							limit:				32000,
+							limit:				16000,
 							useRelativePath:	false,
 							publicPath:			publicPath
 						}
@@ -97,7 +97,7 @@ module.exports = {
 	],
 	optimization:	{
 		splitChunks:	{
-			minSize:	4000
+			minSize:	32000
 		}
 	}
 };

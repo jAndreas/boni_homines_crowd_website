@@ -1,9 +1,8 @@
 @import '~barfoos2.0/css/viewportDefinitions';
-@import '~barfoos2.0/css/util';
 
 div.cookieConfirmSection {
 	width:100vw;
-	height:10vh;
+	height:8vh;
 	background-color:#3a4054e8;
 
 	display:flex;
@@ -24,6 +23,7 @@ div.cookieConfirmSection {
 		color:white;
 		font-size:2.5vh;
 		font-weight:bold;
+		font-family:Nunito,Arial;
 		width:80vw;
 
 		@media screen and (max-width:$iPhone6Portrait) {
@@ -35,9 +35,10 @@ div.cookieConfirmSection {
 	> input.confirm {
 		font-size:2.5vh;
 		padding:0.5vh;
-		padding-left:1vh;
-		padding-right:1vh;
+		padding-left:2vh;
+		padding-right:2vh;
 		margin-left:2vw;
+		font-family:barfoos;
 
 		@media screen and (max-width:$iPhone6Portrait) {
 			margin-left:0px;

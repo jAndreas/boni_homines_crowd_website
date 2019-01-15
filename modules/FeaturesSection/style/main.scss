@@ -1,0 +1,200 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+div#FeaturesSection {
+	position:relative;
+	width:100vw;
+	font-family:Nunito;
+	font-size:14px;
+	color:#202728;
+
+	> div.content {
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		margin-top:10vh;
+
+		@media screen and(max-width:$iPadPortrait) {
+			margin-top:0vh;
+		}
+
+		@media screen and(max-width:$iPhone6Portrait) {
+			margin-top:0vh;
+		}
+
+		> div.row {
+			display:flex;
+			flex-direction:row;
+			align-items:center;
+			justify-content:center;
+			margin-top:10vh;
+
+			@media screen and(max-width:$iPadPortrait) {
+				margin-top:0vh;
+				flex-wrap:wrap;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				margin-top:0vh;
+				flex-wrap:wrap;
+			}
+
+			&.reverse {
+				flex-direction:row-reverse;
+			}
+
+			> div.desc {
+				display:flex;
+				flex-direction:column;
+				align-items:flex-start;
+				justify-content:center;
+
+				width:40vw;
+				background-color:#ffffffa8;
+				border-radius:30px;
+				padding:10px;
+				margin-right:4vw;
+				margin-left:4vw;
+
+				font-size:4vw;
+				color:#5cacdeb5;
+
+				@media screen and(max-width:$iPadPortrait) {
+					width:80vw;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					width:90vw;
+				}
+
+				> div.titleContainer {
+					display:flex;
+					flex-direction:row;
+					flex-wrap:nowrap;
+					justify-content:space-around;
+					align-items:center;
+
+					font-family:GloriaHallelujah;
+					font-size:2vw;
+					font-weight:bold;
+					color:#304758;
+
+					@media screen and(max-width:$iPadPortrait) {
+						font-size:7vw;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						font-size:7vw;
+					}
+
+					> i {
+						&.read {
+							font-size:1vw;
+							margin-left:2vw;
+							cursor:pointer;
+
+							@media screen and(max-width:$iPadPortrait) {
+								font-size:5vw;
+							}
+
+							@media screen and(max-width:$iPhone6Portrait) {
+								font-size:5vw;
+							}
+						}
+					}
+
+					> h1.title {
+						margin-left:2vw;
+					}
+				}
+
+				> h2.text {
+					font-family:Nunito;
+					font-size:1.5vw;
+					color:#304758;
+
+					@media screen and(max-width:$iPadPortrait) {
+						font-size:5vw;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						font-size:5vw;
+					}
+				}
+
+				> h2.preorder {
+					font-family:Nunito;
+					font-size:1.5vw;
+					color:#304758;
+					margin-top:2vh;
+
+					> a {
+						color:#116894;
+						text-decoration:none;
+
+						> i.bookTitle {
+							font-weight:bold;
+						}
+					}
+
+					@media screen and(max-width:$iPadPortrait) {
+						font-size:5vw;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						font-size:5vw;
+					}
+				}
+			}
+
+			> div.image {
+				width:40vw;
+				height:60vh;
+
+				background-size:contain;
+				background-repeat:no-repeat;
+				background-position:center center;
+
+				@media screen and(max-width:$iPadPortrait) {
+					width:85vw;
+					height:50vh;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					width:90vw;
+					height:50vh;
+				}
+
+				&.bonicommunity {
+					background-image:url(../images/imac-transparent.png);
+				}
+
+				&.bonicounseling {
+					height:75vh;
+					background-image:url(../images/counseling_web.png);
+
+					&:hover {
+						background-image:url(../images/foodtable1.png);
+					}
+				}
+
+				&.bonibooks {
+					height:95vh;
+					background-image:url(../images/mangelernaehrung1.png);
+
+					@media screen and(max-width:$iPadPortrait) {
+						height:60vh;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						height:60vh;
+					}
+
+					&:hover {
+						background-image:url(../images/mangelernaehrung2.png);
+					}
+				}
+			}
+		}
+	}
+}

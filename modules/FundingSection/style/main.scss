@@ -1,0 +1,551 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+@font-face {
+	font-family:GloriaHallelujah;
+	src:url(../fonts/GloriaHallelujah.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+@font-face {
+	font-family:Nunito;
+	src:url(../fonts/Nunito.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+@keyframes blink {
+	from {
+		filter:brightness(1);
+	}
+	to {
+		filter:brightness(1.2);
+	}
+}
+
+div#FundingSection {
+	position:relative;
+	width:100vw;
+	color:#343354;
+
+	> div.content {
+		display:flex;
+		flex-direction:column;
+		align-items:flex-end;
+		justify-content:center;
+		margin-top:10vh;
+		width:97vw;
+
+		@media screen and(max-width:$iPadPortrait) {
+			align-items:center;
+			width:100vw;
+		}
+
+		@media screen and(max-width:$iPhone6Portrait) {
+			align-items:center;
+			width:100vw;
+		}
+
+		> h1.title {
+			font-family:GloriaHallelujah,Verdana;
+			font-size:8vw;
+			text-shadow:2px 2px #83a1b3;
+			margin-right:2vw;
+
+			@media screen and(max-width:$iPadPortrait) {
+				font-size:12vw;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				font-size:12vw;
+			}
+		}
+
+		> h2.subtitle {
+			font-family:Nunito,Arial;
+			font-size:2vw;
+			transform:translateY(-7vh);
+			opacity:0.5;
+			margin-right:4vw;
+
+			@media screen and(max-width:$iPadPortrait) {
+				font-size:5vw;
+				transform:translateY(-3vh);
+				opacity:0.6;
+				margin-right:-8vw;
+				text-shadow:1px 1px 1px black;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				font-size:5vw;
+				transform:translateY(-3vh);
+				opacity:0.6;
+				margin-right:-8vw;
+				text-shadow:1px 1px 1px black;
+			}
+		}
+
+		> div.fundingContainer {
+			display:flex;
+			flex-direction:row;
+			flex-wrap:nowrap;
+			justify-content:space-around;
+			align-items:center;
+			width:60vw;
+			background-image:radial-gradient(#ffffe9f2, #90b5bd69), url(../images/fundbg.png);
+			background-size:cover;
+			background-repeat:no-repeat no-repeat;
+			background-position:center center, 0% 30px;
+			border-radius:42px;
+			border:1px solid gray;
+			overflow:hidden;
+
+			@media screen and(max-width:$iPadPortrait) {
+				width:90vw;
+				border-radius:10px;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				width:95vw;
+				border-radius:10px;
+			}
+
+			> div.andrewFat {
+				background-image:url(../images/fatandy.png);
+				background-size:contain;
+				background-repeat:no-repeat;
+				background-position:bottom center;
+				height:30vh;
+				width:8vw;
+				align-self:flex-end;
+
+				@media screen and(max-width:$iPadPortrait) {
+					height:16vh;
+					width:20vw;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					height:16vh;
+					width:20vw;
+				}
+			}
+
+			> div.fundingProgress {
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+
+				font-family:Nunito,Arial;
+
+				@media screen and(max-width:$iPadPortrait) {
+					width:90vw;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					width:95vw;
+				}
+
+				> div.statusDisplay {
+					align-self:flex-end;
+					font-size:2vw;
+					font-weight:bold;
+					font-family:Verdana;
+
+					display:flex;
+					flex-direction:row;
+					justify-content:space-between;
+					align-items:center;
+
+					@media screen and(max-width:$iPadPortrait) {
+						align-self:center;
+						font-size:4vw;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						align-self:center;
+						font-size:4vw;
+					}
+
+					div.small {
+						margin-left:5px;
+						margin-right:5px;
+						font-size:1vw;
+					}
+				}
+
+				> progress.bar {
+					position:relative;
+					width:40vw;
+					height:6vh;
+					display:flex;
+					flex-direction:row;
+					justify-content:center;
+					align-items:center;
+					animation:1200ms ease-in-out alternate 0s infinite blink;
+
+					@media screen and(max-width:$iPadPortrait) {
+						width:65vw;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						width:65vw;
+					}
+
+					&[value] {
+						-webkit-appearance:none;
+						-moz-appearance:none;
+						appearance:none;
+
+						border:1px solid gray;
+						border-radius:10px;
+
+						&::-webkit-progress-value {
+							background-image:linear-gradient(110deg, rgba(0, 170, 255, 0.8), rgba(135, 220, 130, 0.9));
+							border-radius:10px;
+							background-size:100% 100%;
+							border:1px solid gray;
+						}
+
+						&::-webkit-progress-bar {
+							border-radius:10px;
+							background-color:#eee;
+							box-shadow:0 2px 5px rgba(0, 0, 0, 0.45) inset, 2px 2px 8px white, 0px 0px 16px 4px white;
+						}
+
+						&::-moz-progress-bar {
+							background-image:linear-gradient(110deg, rgba(0, 120, 255, 0.8), rgba(85, 220, 90, 0.9));
+							background-size:100% 100%;
+							border-radius:10px;
+							background-color:#eee;
+							box-shadow:0 2px 5px rgba(0, 0, 0, 0.45) inset, 2px 2px 8px white, 0px 0px 16px 4px white;
+						}
+					}
+				}
+			}
+
+			> div.andrewLean {
+				background-image:url(../images/leanandy.png);
+				background-size:contain;
+				background-repeat:no-repeat;
+				height:35vh;
+				width:10vw;
+
+				@media screen and(max-width:$iPadPortrait) {
+					height:20vh;
+					width:24vw;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					height:20vh;
+					width:24vw;
+				}
+			}
+		}
+
+		> div.row {
+			display:flex;
+			flex-direction:row-reverse;
+			flex-wrap:nowrap;
+			justify-content:flex-start;
+			align-items:center;
+			width:90vw;
+
+			@media screen and(max-width:$iPadPortrait) {
+				flex-direction:column;
+				width:90vw;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				flex-direction:column;
+				width:95vw;
+			}
+
+			> div.goodieContainer {
+				display:flex;
+				flex-direction:row;
+				flex-wrap:wrap;
+				justify-content:flex-start;
+				align-items:center;
+				width:54vw;
+				margin-top:8vh;
+				font-family:Nunito;
+				font-size:2vw;
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					width:95vw;
+				}
+
+				@media screen and(max-width:$iPadPortrait) {
+					width:90vw;
+				}
+
+				> div.box {
+					display:flex;
+					flex-direction:column;
+					justify-content:flex-start;
+					align-items:center;
+
+					width:160px;
+					height:150px;
+					border:1px solid #5c838c;
+					background-image:radial-gradient(#ffffff00, #8dada3);
+					margin:1vw;
+					border-radius:24px;
+					box-shadow:2px 2px 4px 0px #a09b9b;
+					box-sizing:border-box;
+					cursor:pointer;
+					transition:transform 100ms linear;
+					overflow:hidden;
+
+					@media screen and(max-width:$iPadPortrait) {
+						background-image:radial-gradient(#ffffffad, #8dada3);
+						height:30vh;
+						width:32vh;
+						border-radius:10px;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						background-image:radial-gradient(#ffffffad, #8dada3);
+						height:26vh;
+						width:24vh;
+						border-radius:10px;
+					}
+
+					&:hover {
+						transform:scale(1.3,1.3);
+					}
+
+					&.selected {
+						border:1px dotted #f77e1a;
+						background-image:radial-gradient(#82e8ff59, #ffdbb6);
+					}
+
+					> div.amount {
+						flex-basis:30%;
+						font-weight:bold;
+						display:flex;
+						flex-direction:row;
+						justify-content:center;
+
+						@media screen and(max-width:$iPadPortrait) {
+							font-size:9vw;
+						}
+
+						@media screen and(max-width:$iPhone6Portrait) {
+							font-size:9vw;
+						}
+
+						> input.manualValue {
+							width:50%;
+							text-align:center;
+							background-color:transparent;
+							border:none;
+							outline:none;
+							border-radius:32px;
+							color:#343354;
+						}
+					}
+
+					> div.image {
+						&.help {
+							font-size:1vw;
+						}
+					}
+
+					> div.goodies {
+						flex-basis:70%;
+						display:flex;
+						flex-direction:row;
+						flex-wrap:wrap;
+						justify-content:flex-start;
+						align-items:center;
+						align-self:stretch;
+						background-position:center center;
+						background-size:contain;
+						background-repeat:no-repeat;
+						padding:5px;
+
+						&.help {
+							font-size:1.5vw;
+							font-weight:bold;
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:center;
+
+							@media screen and(max-width:$iPhone6Portrait) {
+								font-size:5.5vw;
+							}
+
+							@media screen and(max-width:$iPadPortrait) {
+								font-size:5.5vw;
+							}
+
+							> div {
+								text-align:center;
+							}
+						}
+
+						> div.item {
+							font-size:0.7vw;
+							font-weight:bold;
+							border:1px solid #d8fbff;
+							box-sizing:border-box;
+							border-radius:8px;
+							text-shadow:0px 0px 4px white;
+							padding:2px;
+							background-image:linear-gradient(175deg, #030a0acf, #143c3ae3);
+							color:white;
+							padding-left:4px;
+							padding-right:4px;
+							cursor:default;
+							transition:transform 80ms linear;
+
+							@media screen and(max-width:$iPhone6Portrait) {
+								font-size:2.5vw;
+							}
+
+							@media screen and(max-width:$iPadPortrait) {
+								font-size:2.5vw;
+							}
+
+							&:hover {
+								transform:scale(1.3,1.3);
+							}
+						}
+					}
+
+					> div.euro5 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/5euro.png);
+					}
+
+					> div.euro10 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/10euro.png);
+					}
+
+					> div.euro20 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/20euro.png);
+					}
+
+					> div.euro50 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/50euro.png);
+					}
+
+					> div.euro100 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/100euro.png);
+					}
+
+					> div.euro200 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/200euro.png);
+					}
+
+					> div.euro500 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/500euro.png);
+					}
+
+					> div.euro1000 {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/1000euro.png);
+					}
+
+					> div.gift {
+						background-image:radial-gradient(#ffffff3d,#ffffffEa),url(../images/gift.png);
+					}
+				}
+			}
+
+			> div.displayInfo {
+				display:flex;
+				flex-direction:row;
+				flex-wrap:wrap;
+				justify-content:flex-start;
+				align-items:center;
+				width:30vw;
+				margin-top:2vh;
+
+				font-family:GloriaHallelujah, Nunito;
+				font-size:2vw;
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					display:none;
+				}
+
+				@media screen and(max-width:$iPadPortrait) {
+					display:none;
+				}
+
+				> div.output {
+					> div.mini {
+						font-size:10px;
+					}
+				}
+			}
+		}
+
+		> div.fundingHistoryContainer {
+			display:flex;
+			flex-direction:column;
+			flex-wrap:nowrap;
+			justify-content:flex-start;
+			align-items:flex-start;
+			width:90vw;
+			min-height:70vh;
+			margin-top:10vh;
+			background-image:radial-gradient(#ffffF9eb, #bdd0d2e8), url(../images/crowd.png);
+			background-size:contain;
+			background-repeat:no-repeat no-repeat;
+			background-position:bottom center;
+			border:1px solid gray;
+			overflow:hidden;
+
+			&.restricted {
+				max-height:120vh;
+			}
+
+			> div.title {
+				font-family:GloriaHallelujah, Nunito;
+				font-size:4vw;
+				height:10vh;
+				border-bottom:1px solid #9090909e;
+				-webkit-box-reflect:below -3vw linear-gradient(#ef0b0b1a, #c526260d);
+				padding:1vw;
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					font-size:6vw;
+				}
+
+				@media screen and(max-width:$iPadPortrait) {
+					font-size:6vw;
+				}
+			}
+
+			> div.backersList {
+				display:block;
+
+				width:100%;
+				padding:1vw;
+				font-family:Nunito;
+				font-size:1.2vw;
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					font-size:5.2vw;
+				}
+
+				@media screen and(max-width:$iPadPortrait) {
+					font-size:5.2vw;
+				}
+			}
+
+			> div.showAll {
+				display:none;
+				align-self:center;
+				position:absolute;
+				bottom:-7px;
+				padding:5px;
+				z-index:1;
+				font-family:Nunito;
+				background-image:linear-gradient(to top, rgba(0, 75, 111, 0.45), rgba(124, 194, 220, 0.36));
+			}
+		}
+	}
+}

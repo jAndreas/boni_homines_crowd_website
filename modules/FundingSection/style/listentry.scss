@@ -1,0 +1,111 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+@keyframes moveEntryIn {
+	from {
+		transform:translateX(-30vw);
+		opacity:0;
+	}
+	to {
+		transform:translateX(0vw);
+		opacity:1;
+	}
+}
+
+div.entry {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:flex-start;
+	align-items:flex-start;
+	animation:2s ease-in-out 0s 1 moveEntryIn;
+
+	> div.time {
+		width:8vw;
+		font-size:1vw;
+		cursor:pointer;
+	}
+
+	> div.name {
+		width:8vw;
+	}
+
+	> div.amount {
+		width:8vw;
+		cursor:pointer;
+	}
+
+	> div.message {
+		width:60vw;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+
+	@media screen and(max-width:$iPhone6Portrait) {
+		flex-wrap:wrap;
+		align-items:center;
+		margin-bottom:3vh;
+		height:12vh;
+		background-color:#ffffff4d;
+		border-top:1px solid gray;
+		border-bottom:1px solid gray;
+		overflow:hidden;
+
+		> div.time {
+			width:100vw;
+			font-size:3vw;
+			cursor:pointer;
+		}
+
+		> div.name {
+			width:50vw;
+		}
+
+		> div.amount {
+			width:auto;
+			cursor:pointer;
+		}
+
+		> div.message {
+			width:80vw;
+			font-size:3vw;
+			overflow:auto;
+			text-overflow:inherit;
+			white-space:normal;
+		}
+	}
+
+	@media screen and(max-width:$iPadPortrait) {
+		flex-wrap:wrap;
+		align-items:center;
+		margin-bottom:3vh;
+		height:16vh;
+		background-color:#ffffff4d;
+		border-top:1px solid gray;
+		border-bottom:1px solid gray;
+		overflow:hidden;
+
+		> div.time {
+			width:100vw;
+			font-size:3vw;
+			cursor:pointer;
+		}
+
+		> div.name {
+			width:50vw;
+		}
+
+		> div.amount {
+			width:auto;
+			cursor:pointer;
+		}
+
+		> div.message {
+			width:80vw;
+			font-size:3vw;
+			overflow:auto;
+			text-overflow:inherit;
+			white-space:normal;
+		}
+	}
+}

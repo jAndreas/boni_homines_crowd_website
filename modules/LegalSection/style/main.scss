@@ -1,0 +1,98 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+div#LegalSection {
+	position:relative;
+	width:100vw;
+	font-family:Nunito, Verdana;
+	font-size:2vh;
+	color:#505b5d;
+
+	> div.content {
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		justify-content:space-around;
+		align-items:center;
+
+		height:20vh;
+		background-image:radial-gradient(#000000e8, #020c09);
+
+		> div.legal {
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:flex-start;
+			width:25vw;
+
+			@media screen and(max-width:$iPadPortrait) {
+				width:auto;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				width:auto;
+			}
+
+			> div.copyright {
+				font-weight:bold;
+				border-bottom:1px solid #687e86;
+
+				@media screen and(max-width:$iPadPortrait) {
+					width:auto;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					width:auto;
+				}
+			}
+
+			> div.more {
+				display:flex;
+				flex-direction:row;
+
+				> div.impressum {
+					cursor:pointer;
+
+					&:hover {
+						color:#727c7e;
+					}
+				}
+
+				> div.privacy {
+					margin-left:1vw;
+					cursor:pointer;
+
+					&:hover {
+						color:#727c7e;
+					}
+				}
+			}
+		}
+
+		> div.socialmedia {
+			display:flex;
+			flex-direction:row;
+			justify-content:flex-end;
+			align-items:center;
+			font-size:2vw;
+			width:30vw;
+
+			@media screen and(max-width:$iPadPortrait) {
+				font-size:7vw;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				font-size:7vw;
+			}
+
+			> a {
+				margin-left:2vw;
+				cursor:pointer;
+				color:#505b5d;
+
+				&:hover {
+					color:#727c7e;
+				}
+			}
+		}
+	}
+}

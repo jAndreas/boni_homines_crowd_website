@@ -1,0 +1,119 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+@keyframes moveIn {
+	from {
+		transform:translateY(-100%);
+	}
+	to {
+		transform:translateY(0%) rotate(-3deg);
+	}
+}
+
+@keyframes moveOut {
+	from {
+		transform:translateY(0%) rotate(0deg);
+	}
+	to {
+		transform:translateY(-100%) rotate(0deg);
+	}
+}
+
+@keyframes swing {
+	from {
+		transform:rotate(-3deg) translateY(0%);
+	}
+	to {
+		transform:rotate(3deg) translateY(0%);
+	}
+}
+
+div.DebugOverlay {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:center;
+	align-items:center;
+
+	font-family:Nunito;
+
+	background-image:radial-gradient(rgba(138, 179, 214, 0.58), rgba(4, 30, 45, 0.82));
+
+	@media screen and (max-width:$iPhone6Portrait) {
+		flex-direction:column;
+		align-items:stretch;
+	}
+
+	> div.content {
+		position:relative;
+
+		display:flex;
+		flex-direction:row-reverse;
+		justify-content:center;
+		align-items:flex-end;
+
+		width:100%;
+		height:100vh;
+		background-color:transparent;
+		transform-origin:center -20px;
+
+		background-image:url(../images/woodensign.png);
+		background-size:70% 105%;
+		background-position:center center;
+		background-repeat:no-repeat;
+
+		@media screen and(max-width:$iPadPortrait) {
+			background-size:100% 70%;
+		}
+
+		@media screen and(max-width:$iPhone6Portrait) {
+			background-size:100% 70%;
+		}
+
+		&.swingIn {
+			animation:1s ease-in-out 0s 1 moveIn;
+		}
+
+		> div.debugContainer {
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+			width:25vw;
+			margin-bottom:8vh;
+		}
+
+		> div.close {
+			position:absolute;
+			font-size:5vw;
+			font-weight:bold;
+			margin-top:5vh;
+			top:22vh;
+			right:20vh;
+			text-shadow:3px 3px 6px black;
+			color:#f4fbff;
+			cursor:pointer;
+
+			@media screen and(max-width:$iPadPortrait) {
+				top:29vh;
+				right:-2vh;
+				font-size:15vw;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				top:27vh;
+				right:-2vh;
+				font-size:15vw;
+			}
+
+			&:hover {
+				transform:scale(1.2, 1.2);
+			}
+		}
+	}
+}

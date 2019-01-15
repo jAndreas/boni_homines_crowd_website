@@ -1,0 +1,204 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+div#ContactSection {
+	position:relative;
+	width:100vw;
+	font-family:Nunito, Verdana;
+	font-size:3vh;
+	color:#505b5d;
+
+	> div.content {
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		margin-top:10vh;
+		width:97vw;
+
+		@media screen and(max-width:$iPadPortrait) {
+			width:100vw;
+		}
+
+		@media screen and(max-width:$iPhone6Portrait) {
+			width:100vw;
+		}
+
+		> form.userContact {
+			width:70vw;
+			display:flex;
+			flex-direction:row;
+			flex-wrap:wrap;
+			justify-content:center;
+			align-items:center;
+			background-color:#ffffffa8;
+
+			@media screen and(max-width:$iPadPortrait) {
+				width:90vw;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				width:95vw;
+			}
+
+			> div.title {
+				display:flex;
+				flex-direction:row;
+				flex-wrap:wrap;
+				justify-content:center;
+				align-items:center;
+				width:100%;
+
+				@media screen and(max-width:$iPadPortrait) {
+					flex-direction:column;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					flex-direction:column;
+				}
+
+				> h1.first {
+					font-size:3vw;
+					text-transform:uppercase;
+					font-weight:bold;
+					text-shadow:-1px -1px 2px white;
+
+					@media screen and(max-width:$iPadPortrait) {
+						font-size:9vw;
+						text-align:center;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						font-size:9vw;
+						text-align:center;
+					}
+				}
+
+				> h2.second {
+					font-size:2vw;
+					font-family:GloriaHallelujah, Verdana;
+					text-shadow:-1px -1px 2px white;
+
+					@media screen and(max-width:$iPadPortrait) {
+						font-size:5vw;
+						text-align:center;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						font-size:5vw;
+						text-align:center;
+					}
+				}
+			}
+
+			> div.topLine {
+				display:flex;
+				flex-direction:row;
+				flex-wrap:nowrap;
+				justify-content:space-between;
+				width:100%;
+				margin-top:10vh;
+
+				@media screen and(max-width:$iPadPortrait) {
+					flex-direction:column;
+					margin-top:5vh;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					flex-direction:column;
+					margin-top:5vh;
+				}
+
+				> input {
+					width:45%;
+					border:1px solid #8887879c;
+					padding:1vw;
+					outline:none;
+
+					@media screen and(max-width:$iPadPortrait) {
+						width:auto;
+						margin-bottom:1vh;
+					}
+
+					@media screen and(max-width:$iPhone6Portrait) {
+						width:auto;
+						margin-bottom:1vh;
+					}
+
+					&:invalid {
+						text-transform:uppercase;
+						letter-spacing:2px;
+					}
+				}
+			}
+
+			> div.topics {
+				display:flex;
+				flex-direction:column;
+				justify-content:flex-start;
+				align-items:flex-start;
+				margin-top:5vh;
+				width:95%;
+				font-size:2vh;
+
+				@media screen and(max-width:$iPadPortrait) {
+					font-size:3vh;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					font-size:3vh;
+				}
+
+				> div.row {
+					display:flex;
+					flex-direction:row;
+					flex-wrap:nowrap;
+					justify-content:center;
+					align-items:center;
+					font-weight:bold;
+					text-shadow:-1px -1px 2px white;
+
+					> label {
+						margin-left:1vw;
+					}
+				}
+			}
+
+			> textarea.content {
+				width:100%;
+				height:18vh;
+				margin-top:2vh;
+				border:1px solid gray;
+				outline:none;
+				resize:vertical;
+				margin-bottom:2vh;
+				padding:1vw;
+
+				&:invalid {
+					text-transform:uppercase;
+					letter-spacing:2px;
+				}
+			}
+
+			> input.send {
+				padding:4px 10px 4px 12px;
+				border-radius:8px;
+				background-color:#c9e4f7;
+				background-image:none;
+				color:#4a5d71;
+				font-family:barfoos;
+				font-size:3vh;
+				margin-top:2vh;
+				margin-bottom:10vh;
+				border:1px solid #587882;
+
+				@media screen and(max-width:$iPadPortrait) {
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					width:100%;
+					height:10vh;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,370 @@
+@import '~barfoos2.0/css/viewportDefinitions';
+
+@keyframes moveIn {
+	from {
+		transform:translateY(-100%);
+	}
+	to {
+		transform:translateY(0%) rotate(-3deg);
+	}
+}
+
+@keyframes moveOut {
+	from {
+		transform:translateY(0%) rotate(0deg);
+	}
+	to {
+		transform:translateY(-100%) rotate(0deg);
+	}
+}
+
+@keyframes swing {
+	from {
+		transform:rotate(-3deg) translateY(0%);
+	}
+	to {
+		transform:rotate(3deg) translateY(0%);
+	}
+}
+
+@keyframes reSwingStart {
+	from {
+		transform:rotate(0deg) translateY(0%);
+	}
+	to {
+		transform:rotate(-3deg) translateY(0%);
+	}
+}
+
+@keyframes swingback {
+	from {
+		transform:rotate(3deg) translateY(0%);
+	}
+	to {
+		transform:rotate(0deg) translateY(0%);
+	}
+}
+
+div.PaymentOverlay {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+
+	display:flex;
+	flex-direction:row;
+	flex-wrap:nowrap;
+	justify-content:center;
+	align-items:center;
+
+	font-family:Nunito;
+
+	background-image:radial-gradient(rgba(138, 179, 214, 0.58), rgba(4, 30, 45, 0.82));
+
+	@media screen and (max-width:$iPhone6Portrait) {
+		flex-direction:column;
+		align-items:stretch;
+	}
+
+	> div.content {
+		position:relative;
+
+		display:flex;
+		flex-direction:row-reverse;
+		justify-content:center;
+		align-items:flex-end;
+
+		width:100%;
+		height:100vh;
+		background-color:transparent;
+		transform-origin:center -20px;
+
+		background-image:url(../images/woodensign.png);
+		background-size:70% 105%;
+		background-position:center center;
+		background-repeat:no-repeat;
+
+		@media screen and(max-width:$iPadPortrait) {
+			background-size:100% 70%;
+		}
+
+		@media screen and(max-width:$iPhone6Portrait) {
+			background-size:100% 70%;
+		}
+
+		&.swingIn {
+			animation:1s ease-in-out 0s 1 moveIn, 500ms ease-in-out alternate 1s 3 swing, 500ms ease-in-out 2500ms 1 swingback;
+		}
+
+		&.reSwing {
+			animation:500ms ease-in-out 0s 1 reSwingStart, 500ms ease-in-out alternate 500ms 3 swing, 500ms ease-in-out 2000ms 1 swingback;
+		}
+
+		> div.paymentContainer {
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+			width:25vw;
+			margin-bottom:8vh;
+
+			@media screen and(max-width:$iPadPortrait) {
+				width:52vw;
+				margin-bottom:20vh;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				width:52vw;
+				margin-bottom:20vh;
+			}
+
+			> div.pp_placeholder {
+				width:100%;
+			}
+
+			> div.customPayment {
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+
+				margin-top:1vh;
+				height:6vh;
+				max-width:750px;
+				width:100%;
+				border-radius:4px;
+
+				font-size:1.2vw;
+				font-family:Verdana,Nunito;
+				font-weight:bold;
+				color:#314765;
+				cursor:pointer;
+
+				@media screen and(max-width:$iPadPortrait) {
+					font-size:3vw;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					font-size:3vw;
+				}
+
+				&:hover {
+					box-shadow:inset 0 0 100px 100px rgba(255, 255, 255, 0.2);
+				}
+
+				&.open {
+					height:15vh;
+
+					> div.label {
+						margin-top:1vh;
+					}
+
+					> div.displayCustomPayment {
+						display:flex;
+						height:20vh;
+						color:#0e434c;
+						text-shadow:2px 2px 4px grey;
+					}
+				}
+
+				> div.label {
+					transition:all 300ms ease-in-out;
+				}
+
+				> div.displayCustomPayment {
+					display:none;
+					flex-direction:column;
+					justify-content:center;
+					align-items:center;
+					width:100%;
+					transition:all 300ms ease-in-out;
+					cursor:default;
+					font-family:Nunito, Verdana;
+
+					> div.row {
+						display:flex;
+						flex-direction:row;
+						justify-content:flex-start;
+						align-items:center;
+						width:100%;
+
+						@media screen and(max-width:$iPadPortrait) {
+							justify-content:center;
+						}
+
+						@media screen and(max-width:$iPhone6Portrait) {
+							justify-content:center;
+						}
+
+						> div.left {
+							width:30%;
+							text-align:right;
+							user-select:none;
+							color:#055c88;
+							text-shadow:none;
+							margin-right:1vw;
+
+							@media screen and(max-width:$iPadPortrait) {
+								width:auto;
+							}
+
+							@media screen and(max-width:$iPhone6Portrait) {
+								width:auto;
+							}
+						}
+
+						> div.right {
+							width:70%;
+							text-align:left;
+
+							@media screen and(max-width:$iPadPortrait) {
+								width:auto;
+							}
+
+							@media screen and(max-width:$iPhone6Portrait) {
+								width:auto;
+							}
+						}
+					}
+
+					> sup {
+						font-size:0.8vw;
+						margin-top:1vw;
+
+						@media screen and(max-width:$iPadPortrait) {
+							font-size:1.8vw;
+						}
+
+						@media screen and(max-width:$iPhone6Portrait) {
+							font-size:1.8vw;
+						}
+					}
+				}
+			}
+
+			> div.prepayment {
+				background-color:#a9e2a9;
+			}
+
+			> div.bitcoin {
+				background-color:#ffc397;
+
+				@media screen and(max-width:$iPadPortrait) {
+					word-break:break-all;
+
+					> div.displayCustomPayment > div {
+						padding-left:15px;
+						padding-right:15px;
+					}
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					word-break:break-all;
+
+					> div.displayCustomPayment > div {
+						padding-left:15px;
+						padding-right:15px;
+					}
+				}
+			}
+		}
+
+		> div.rightSide {
+			display:flex;
+			flex-direction:column;
+			width:25vw;
+			margin-bottom:8vh;
+			height:30vh;
+			align-self:flex-end;
+			margin-left:4vw;
+
+			@media screen and(max-width:$iPadPortrait) {
+				align-self:center;
+				width:34vw;
+				height:35vh;
+				margin-left:2vw;
+				margin-top:24vh;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				align-self:center;
+				width:34vw;
+				height:35vh;
+				margin-left:2vw;
+				margin-top:24vh;
+			}
+
+			> div.thankyou {
+				font-size:2vw;
+				color:#efebea;
+				font-family:verdana;
+				text-shadow:1px 1px 2px black;
+				transform:rotate(4deg);
+				top:20vh;
+				align-self:center;
+				margin-left:2vw;
+				margin-top:8vh;
+				width:100%;
+				background-color:#378fecb8;
+				border-radius:8px;
+
+				@media screen and(max-width:$iPadPortrait) {
+					font-size:5vw;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					font-size:5vw;
+				}
+			}
+
+			> textarea.message {
+				width:100%;
+				height:10vh;
+				resize:none;
+				padding:1vw;
+
+				@media screen and(max-width:$iPadPortrait) {
+					height:20vh;
+				}
+
+				@media screen and(max-width:$iPhone6Portrait) {
+					height:20vh;
+				}
+
+				&:invalid {
+					text-transform:uppercase;
+					letter-spacing:2px;
+				}
+			}
+		}
+
+		> div.close {
+			position:absolute;
+			font-size:5vw;
+			font-weight:bold;
+			margin-top:5vh;
+			top:22vh;
+			right:20vh;
+			text-shadow:3px 3px 6px black;
+			color:#f4fbff;
+			cursor:pointer;
+
+			@media screen and(max-width:$iPadPortrait) {
+				top:29vh;
+				right:-2vh;
+				font-size:15vw;
+			}
+
+			@media screen and(max-width:$iPhone6Portrait) {
+				top:27vh;
+				right:-2vh;
+				font-size:15vw;
+			}
+
+			&:hover {
+				transform:scale(1.2, 1.2);
+			}
+		}
+	}
+}
